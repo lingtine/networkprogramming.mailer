@@ -19,7 +19,7 @@ public class EmailController {
         this.emailService = emailService;
     }
 
-    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping
     public Object sendEmail(@ModelAttribute @Valid Email email) {
         return ResponseHelper.getResponse(
                 emailService.send(email),

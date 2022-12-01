@@ -34,7 +34,7 @@ public class EmailServiceImpl implements EmailService {
                 sendEmailWithAttachments(email);
     }
 
-    private Email sendEmailWithAttachments(Email email) {
+    private Email sendMessageEmail(Email email) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         try {
             mailMessage.setFrom(sender);
@@ -50,7 +50,7 @@ public class EmailServiceImpl implements EmailService {
         return email;
     }
 
-    private Email sendMessageEmail(Email email) {
+    private Email sendEmailWithAttachments(Email email) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper;
         try {

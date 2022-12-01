@@ -3,6 +3,8 @@ package uth.networkprogramming.group1.mailer.email.model;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.validation.constraints.NotNull;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -26,5 +28,6 @@ public class Email {
 
     private Set<String> blindCarbonCopy = new LinkedHashSet<>();
 
+    @JsonIgnore
     private Set<MultipartFile> attachments = new LinkedHashSet<>();
 }
